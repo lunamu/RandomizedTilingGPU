@@ -4,12 +4,21 @@
 
 #include "UtilsDefs.h"
 #include "KD_tree.h"
-#include "UniformGridsCompact.h"
+#include "UniformGrids.h"
 #include "RandomizedTiling.h"
 #include "Tiller.h"
 
 using namespace std;
 
+
+vector<Point2D> primaryPoints;
+vector<Point2D> secondaryPoints;
+BBox primary_right;
+BBox primary_down;
+BBox secondary_left;
+BBox secondary_up;
+BBox mid_NE;
+BBox mid_SW;
 
 vector<Point2D> centerPoints;
 vector<Point2D> triPoints;

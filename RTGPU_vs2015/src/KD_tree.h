@@ -1,8 +1,8 @@
 #ifndef __KD_TREE__
 #define __KD_TREE__
 
-#include <UtilsDefs.h>
-#include <UniformGrids.h>
+#include "UtilsDefs.h"
+#include "UniformGrids.h"
 
 using namespace std;
 

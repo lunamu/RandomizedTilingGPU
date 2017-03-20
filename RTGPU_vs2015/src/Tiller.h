@@ -1,8 +1,9 @@
 #pragma once
 
-#include <UtilsDefs.h>
-#include <UniformGrids.h>
-#include <KD_tree.h>
+#include "UtilsDefs.h"
+#include "UniformGrids.h"
+#include "KD_tree.h"
+
 //This is a class in charge of tilling.
 //Main task: input point pattern, tile point sampling, and 
 
