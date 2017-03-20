@@ -18,6 +18,26 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\KD_tree.cpp" />
+    <ClCompile Include="src\RandomizedTiling.cpp" />
+    <ClCompile Include="src\Tiller.cpp" />
+    <ClCompile Include="src\UniformGrids.cpp" />
+    <ClCompile Include="src\UniformGridsCompact.cpp" />
+    <ClCompile Include="src\UniformGridsGPU.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\KD_tree.h" />
+    <ClInclude Include="src\RandomizedTiling.h" />
+    <ClInclude Include="src\Tiller.h" />
+    <ClInclude Include="src\UniformGrids.h" />
+    <ClInclude Include="src\UniformGridsCompact.h" />
+    <ClInclude Include="src\UniformGridsGPU.h" />
+    <ClInclude Include="src\UtilsDefs.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="src\kernel.cu" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1906B679-BE15-4A3F-A888-5E4BA6FDD875}</ProjectGuid>
     <RootNamespace>RTGPU_vs2015</RootNamespace>
@@ -150,9 +170,6 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
       <TargetMachinePlatform>64</TargetMachinePlatform>
     </CudaCompile>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <CudaCompile Include="kernel.cu" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 8.0.targets" />
