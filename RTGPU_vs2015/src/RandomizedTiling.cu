@@ -66,6 +66,9 @@ int main(int argc, char* argv[])
 	tiller.DivideConquerTiling(original_bbox, radius, XAXIS, ratio);
 	//DNCPoisson(original_bbox, points, priority, radius, XAXIS,ratio);
 	
+	//TODO:GPU Uniform Grid
+	//UniformGridsGPU
+
 	diff = clock() - start;
 	int msec = diff * 1000 / CLOCKS_PER_SEC;
 	printf("Ratio: %f\nDNC taken %d seconds %d milliseconds\n", ratio, msec / 1000, msec % 1000);
