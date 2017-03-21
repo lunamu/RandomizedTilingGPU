@@ -5,10 +5,6 @@
 #include "KD_tree.h"
 
 
-struct PointWithHash {
-	Point2D p;
-	unsigned int hash;
-};
 
 struct by_hash {
 	bool operator()(PointWithHash const &a, PointWithHash const &b) {

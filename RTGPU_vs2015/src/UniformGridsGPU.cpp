@@ -1,35 +1,24 @@
-#include "UniformGridsGPU.cuh"
+#include "UniformGridsGPU.h"
 
-UniformGridsGPU::UniformGridsGPU(vector<Point2D> host_points, float radius)
+UniformGridsGPU::UniformGridsGPU(vector<Point2D> host_points, int dim_)
 {
-	//int base_dimension = 1.0 / radius;
+	//Set some class parameters
+	dim = dim_;
+	gridBbox = gUnitGrid;
+	w_f = gridBbox.xmax - gridBbox.xmin;
+	h_f = gridBbox.ymax - gridBbox.ymin;
+	itval = 1.0 / dim;
+	width = dim_;
+	height = dim_;
 
-	//unsigned int r = 0; // r will be lg(v)
+	//allocate GPU memory;
+	gpuErrchk(cudaMalloc((void**)&dev_points, sizeof(PointWithHash) * host_points.size()));
+	gpuErrchk(cudaMalloc((void**)&dev_idx, sizeof(int) * host_points.size()));
 
-	//while (base_dimension >>= 1) // unroll for more speed...
-	//{
-	//	r++;
-	//}
-	//dim = 2 ^ (r + 1);
-	//width = dim;
-	//height = dim;
+	//Modify: This might not be correct
+	gpuErrchk(cudaMalloc((void**)&dev_points, sizeof(int) * host_points.size()));
 
-
-
-	//for (Point2D p : input_points)
-	//{
-	//	PointWithHash pwh; pwh.p = p; pwh.hash = SpatialToIdx(p);
-	//	all_points.push_back(pwh);
-	//}
-
-	////sort points array based, use all_hash as key.
-	//std::sort(all_points.begin(), all_points.end(), by_hash());
-	//idx.resize(dim * dim);
-	//for (int i = 0; i < idx.size(); i++) { idx[i] = -1; }
-	//for (int i = 0; i < all_points.size(); i++)
-	//{
-	//	//unsigned int current_hash = all_points[i].hash;
-	//	idx[all_points[i].hash] = i;
-	//}
+	//Generate hash for all points
+	
 
 }

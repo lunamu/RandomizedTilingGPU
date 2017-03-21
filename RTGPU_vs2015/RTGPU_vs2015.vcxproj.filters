@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\RandomizedTiling.cu" />
+    <ClCompile Include="src\UniformGrids.cpp">
+      <Filter>UniformGrids</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UniformGridsCompact.cpp">
+      <Filter>UniformGrids</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UniformGridsGPU.cpp">
+      <Filter>UniformGrids</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KD_tree.cpp">
+      <Filter>KD Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tiller.cpp">
+      <Filter>Tiller</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\RandomizedTiling.h" />
+    <ClInclude Include="src\UtilsDefs.h" />
+    <ClInclude Include="src\UtilKernels.cuh">
+      <Filter>CUDA Kernels</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UniformGridsGPU.h">
+      <Filter>UniformGrids</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UniformGrids.h">
+      <Filter>UniformGrids</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UniformGridsCompact.h">
+      <Filter>UniformGrids</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KD_tree.h">
+      <Filter>KD Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tiller.h">
+      <Filter>Tiller</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CUDA Kernels">
+      <UniqueIdentifier>{335dde6e-d606-4555-88be-4e0cc60e2162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UniformGrids">
+      <UniqueIdentifier>{2a5415dd-64ca-4aa4-983f-fe375d4273b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KD Tree">
+      <UniqueIdentifier>{637790cd-6c8b-4696-aa5a-a5397ec2d2fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tiller">
+      <UniqueIdentifier>{e371f4ba-2ef0-44fd-8b2b-ec86119b9e5f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="src\UtilKernels.cu">
+      <Filter>CUDA Kernels</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>

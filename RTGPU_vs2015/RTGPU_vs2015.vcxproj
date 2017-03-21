@@ -33,7 +33,11 @@
     <ClInclude Include="src\UniformGrids.h" />
     <ClInclude Include="src\UniformGridsCompact.h" />
     <ClInclude Include="src\UniformGridsGPU.h" />
+    <ClInclude Include="src\UtilKernels.cuh" />
     <ClInclude Include="src\UtilsDefs.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="src\UtilKernels.cu" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1906B679-BE15-4A3F-A888-5E4BA6FDD875}</ProjectGuid>

@@ -11,6 +11,11 @@
 #include <algorithm>
 #include <iterator>
 
+
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
+
+
 using namespace std;
 #define XAXIS 1
 #define YAXIS -1
@@ -19,6 +24,17 @@ using namespace std;
 //How wide is the tile.
 #define LEAFLEN (40*r)
 
+//http://stackoverflow.com/questions/14038589/what-is-the-canonical-way-to-check-for-errors-using-the-cuda-runtime-api
+
+#define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
+inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort = true)
+{
+	if (code != cudaSuccess)
+	{
+		fprintf(stderr, "GPUassert: %s %s %d\n", cudaGetErrorString(code), file, line);
+		if (abort) exit(code);
+	}
+}
 
 
 inline double min_(double a, double b)
@@ -66,6 +82,12 @@ public:
 		os << p.x << " " << p.y << endl;
 		return os;
 	}
+};
+
+
+struct PointWithHash {
+	Point2D p;
+	unsigned int hash;
 };
 
 struct BBox

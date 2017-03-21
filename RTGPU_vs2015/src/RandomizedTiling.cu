@@ -7,6 +7,8 @@
 #include "UniformGrids.h"
 #include "RandomizedTiling.h"
 #include "Tiller.h"
+#include <cuda.h>
+#include "UniformGridsGPU.h"
 
 using namespace std;
 
@@ -58,7 +60,7 @@ int main(int argc, char* argv[])
 
 	//Tile them all in one UniformGrid
 
-
+	
 
 	clock_t start = clock(), diff;
 	//Timing
@@ -68,6 +70,9 @@ int main(int argc, char* argv[])
 	
 	//TODO:GPU Uniform Grid
 	//UniformGridsGPU
+	UniformGridsGPU gpu_uniform_grid(tiller.result, 1.0 / (2 * radius));
+
+	
 
 	diff = clock() - start;
 	int msec = diff * 1000 / CLOCKS_PER_SEC;

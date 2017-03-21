@@ -13,6 +13,7 @@ UniformGrids::UniformGrids(int dimension)
 	h_f = gridBbox.ymax - gridBbox.ymin;
 	itval = 1.0 / dimension_edge;
 }
+
 //create with width and height
 UniformGrids::UniformGrids(int w, int h, BBox _bbox)
 {
