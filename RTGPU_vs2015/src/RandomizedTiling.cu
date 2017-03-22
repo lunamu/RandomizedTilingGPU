@@ -70,7 +70,7 @@ int main(int argc, char* argv[])
 	
 	//TODO:GPU Uniform Grid
 	//UniformGridsGPU
-	UniformGridsGPU gpu_uniform_grid(tiller.result, 1.0 / (2 * radius));
+	UniformGridsGPU gpu_uniform_grid(tiller.result, tiller.priority, 1.0 / (2 * radius));
 
 	
 
@@ -79,26 +79,26 @@ int main(int argc, char* argv[])
 	printf("Ratio: %f\nDNC taken %d seconds %d milliseconds\n", ratio, msec / 1000, msec % 1000);
 	//printf("%f %d ", ratio, msec);
 
-	
-	for (int i = 0; i < tiller.result.size(); i++)
-	{
-		tiller.points_in_grid.insert(tiller.result[i], tiller.priority[i]);
-	}
+	//
+	//for (int i = 0; i < tiller.result.size(); i++)
+	//{
+	//	tiller.points_in_grid.insert(tiller.result[i], tiller.priority[i]);
+	//}
 
 
-	start = clock(), diff;
-	//Timing
-	tiller.eliminate_for_maximal(radius);
-	//points_in_grid.eliminate_for_maximal_batch(radius);
+	//start = clock(), diff;
+	////Timing
+	//tiller.eliminate_for_maximal(radius);
+	////points_in_grid.eliminate_for_maximal_batch(radius);
 
 
-	int count = tiller.getGridCount();
-	diff = clock() - start;
-	msec = diff * 1000 / CLOCKS_PER_SEC;
-	//printf("%d %d\n", count, msec);
-	printf("Points:%d\nEliminate for Maximal take %d seconds %d milliseconds\n",count, msec / 1000, msec % 1000);
+	//int count = tiller.getGridCount();
+	//diff = clock() - start;
+	//msec = diff * 1000 / CLOCKS_PER_SEC;
+	////printf("%d %d\n", count, msec);
+	//printf("Points:%d\nEliminate for Maximal take %d seconds %d milliseconds\n",count, msec / 1000, msec % 1000);
 
-	tiller.printToFile(result_filename);
+	//tiller.printToFile(result_filename);
 
 
 	//points_in_grid.test_maximal(radius);
