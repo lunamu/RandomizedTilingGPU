@@ -9,6 +9,7 @@
 #include "Tiller.h"
 #include <cuda.h>
 #include "UniformGridsGPU.h"
+#include "UtilKernels.cuh"
 
 using namespace std;
 
@@ -71,7 +72,9 @@ int main(int argc, char* argv[])
 	//TODO:GPU Uniform Grid
 	//UniformGridsGPU
 	UniformGridsGPU gpu_uniform_grid(tiller.result, tiller.priority, 1.0 / (2 * radius));
+	gpu_uniform_grid.gpu_eliminate_conflict_points(radius);
 
+	viewGPUPoint2D(gpu_uniform_grid.dev_points, gpu_uniform_grid.point_num, "gpua");
 	
 
 	diff = clock() - start;

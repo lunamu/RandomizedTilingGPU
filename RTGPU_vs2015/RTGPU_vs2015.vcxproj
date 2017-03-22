@@ -24,7 +24,9 @@
     <ClCompile Include="src\Tiller.cpp" />
     <ClCompile Include="src\UniformGrids.cpp" />
     <ClCompile Include="src\UniformGridsCompact.cpp" />
-    <ClCompile Include="src\UniformGridsGPU.cpp" />
+    <CudaCompile Include="src\UniformGridsGPU.cu">
+      <FileType>CppCode</FileType>
+    </CudaCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\KD_tree.h" />
@@ -32,7 +34,7 @@
     <ClInclude Include="src\Tiller.h" />
     <ClInclude Include="src\UniformGrids.h" />
     <ClInclude Include="src\UniformGridsCompact.h" />
-    <ClInclude Include="src\UniformGridsGPU.h" />
+    <CudaCompile Include="src\UniformGridsGPU.cuh" />
     <ClInclude Include="src\UtilKernels.cuh" />
     <ClInclude Include="src\UtilsDefs.h" />
   </ItemGroup>
@@ -126,6 +128,7 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_35,sm_35</CodeGeneration>
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -169,6 +172,7 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
+      <CodeGeneration>compute_35,sm_35</CodeGeneration>
     </CudaCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

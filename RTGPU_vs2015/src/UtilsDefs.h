@@ -126,15 +126,15 @@ inline double DistanceSquared(Point2D p1, Point2D p2)
 	return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y);
 }
 
-
-inline double min(double a, double b)
-{
-	return a < b ? a : b;
-}
-inline double max(double a, double b)
-{
-	return a > b ? a : b;
-}
+//
+//inline double min(double a, double b)
+//{
+//	return a < b ? a : b;
+//}
+//inline double max(double a, double b)
+//{
+//	return a > b ? a : b;
+//}
 
 #define X_AXIS 'x'
 #define Y_AXIS 'y'
@@ -214,7 +214,8 @@ inline Point2D BoxUniform(BBox bbox)
 
 
 
-inline bool Circumcenter(const Point2D& p0, const Point2D& p1, const Point2D& p2, Point2D& center, double& rad2){
+inline bool Circumcenter(const Point2D& p0, const Point2D& p1, const Point2D& p2, Point2D& center, double& rad2)
+{
 	double dA, dB, dC, aux1, aux2, div;
 
 	dA = p0.x * p0.x + p0.y * p0.y;

@@ -26,10 +26,6 @@ public:
 	UniformGridsGPU() {}
 	UniformGridsGPU(vector<Point2D>& host_points, vector<int>& host_priority, int dim_);
 
-	__host__ __device__ inline unsigned int SpatialToHash(Point2D point) { return (unsigned int)(((int)((point.y - gridBbox.ymin)*height)) * width + (point.x - gridBbox.xmin) * width); }
-	__device__ bool dart_search(Point2D query, float range);
-	__device__ bool eliminate_conflict(int query_idx, float range, int* cp_index_buffer);
-
 	void gpu_eliminate_conflict_points(float range);
 	//void gpu_gen_gap_points();
 	//void gpu_eliminate_gap_points();
@@ -69,11 +65,5 @@ public:
 	int point_num;
 	//cudaKernels:
 	//Generation and init
-	__global__ void cuda_generate_hash_value(int size);
-	__global__ void cuda_init_index(int size);
-	__global__ void cuda_generate_index(int size);
-
-	//Elimination
-	__global__ void cuda_eliminate_conflict(float range, int size);
 
 };

@@ -8,14 +8,14 @@
     <ClCompile Include="src\UniformGridsCompact.cpp">
       <Filter>UniformGrids</Filter>
     </ClCompile>
-    <ClCompile Include="src\UniformGridsGPU.cpp">
-      <Filter>UniformGrids</Filter>
-    </ClCompile>
     <ClCompile Include="src\KD_tree.cpp">
       <Filter>KD Tree</Filter>
     </ClCompile>
     <ClCompile Include="src\Tiller.cpp">
       <Filter>Tiller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UniformGridsGPU.cu">
+      <Filter>UniformGrids</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -23,9 +23,6 @@
     <ClInclude Include="src\UtilsDefs.h" />
     <ClInclude Include="src\UtilKernels.cuh">
       <Filter>CUDA Kernels</Filter>
-    </ClInclude>
-    <ClInclude Include="src\UniformGridsGPU.h">
-      <Filter>UniformGrids</Filter>
     </ClInclude>
     <ClInclude Include="src\UniformGrids.h">
       <Filter>UniformGrids</Filter>
@@ -38,6 +35,9 @@
     </ClInclude>
     <ClInclude Include="src\Tiller.h">
       <Filter>Tiller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UniformGridsGPU.cuh">
+      <Filter>UniformGrids</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
